@@ -24,12 +24,18 @@
     <script src="js/onload.js"></script>
 
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+
     <style>
         html,
         body {
             margin: 0;
             padding: 0;
             overflow: auto !important;
+            height: 100%;
+            width: 100%;
         }
     </style>
 
@@ -146,81 +152,85 @@
             <!-- END CONTAINER BOOK -->
 
             <!-- BEGIN FOOTER -->
-            <div id="fb7-footer">
+            <nav class="navbar navbar-inverse navbar-fixed-bottom">
 
-                <div class="fb7-bcg-tools"></div>
+                <div id="fb7-footer">
 
-                <div class="fb7-menu" id="fb7-center">
-                    <ul>
+                    <div class="fb7-bcg-tools"></div>
 
-                        <!-- margin left -->
-                        <li></li>
+                    <div class="fb7-menu" id="fb7-center">
+                        <ul>
 
-                        <!-- icon download -->
-                        <li>
-                            <a title="Pdf File Or Zip" class="fb7-download" href="img/file.pdf"></a>
-                        </li>
+                            <!-- margin left -->
+                            <li></li>
 
-
-                        <!-- icon_zoom_in -->
-                        <li>
-                            <a title="Zoom In" class="fb7-zoom-in"></a>
-                        </li>
+                            <!-- icon download -->
+                            <li>
+                                <a title="Pdf File Or Zip" class="fb7-download" href="img/file.pdf"></a>
+                            </li>
 
 
-                        <!-- icon_zoom_out -->
-                        <li>
-                            <a title="Zoom Out" class="fb7-zoom-out"></a>
-                        </li>
+                            <!-- icon_zoom_in -->
+                            <li>
+                                <a title="Zoom In" class="fb7-zoom-in"></a>
+                            </li>
 
 
-                        <!-- icon_zoom_auto -->
-                        <li>
-                            <a title="Zoom Auto" class="fb7-zoom-auto"></a>
-                        </li>
+                            <!-- icon_zoom_out -->
+                            <li>
+                                <a title="Zoom Out" class="fb7-zoom-out"></a>
+                            </li>
 
 
-                        <!-- icon_zoom_original -->
-                        <li>
-                            <a title="Zoom Original (Scale 1:1)" class="fb7-zoom-original"></a>
-                        </li>
+                            <!-- icon_zoom_auto -->
+                            <li>
+                                <a title="Zoom Auto" class="fb7-zoom-auto"></a>
+                            </li>
 
 
-                        <!-- icon_allpages -->
-                        <li>
-                            <a title="Show All Pages " class="fb7-show-all"></a>
-                        </li>
+                            <!-- icon_zoom_original -->
+                            <li>
+                                <a title="Zoom Original (Scale 1:1)" class="fb7-zoom-original"></a>
+                            </li>
 
 
-                        <!-- icon_home -->
-                        <li>
-                            <a title="Show Home Page" class="fb7-home"></a>
-                        </li>
+                            <!-- icon_allpages -->
+                            <li>
+                                <a title="Show All Pages " class="fb7-show-all"></a>
+                            </li>
 
-                        <!-- icon fullscreen -->
-                        <li>
-                            <a title="Full / Normal Screen" class="fb7-fullscreen"></a>
-                        </li>
 
-                        <!-- margin right -->
-                        <li></li>
+                            <!-- icon_home -->
+                            <li>
+                                <a title="Show Home Page" class="fb7-home"></a>
+                            </li>
 
-                    </ul>
+                            <!-- icon fullscreen -->
+                            <li>
+                                <a title="Full / Normal Screen" class="fb7-fullscreen"></a>
+                            </li>
+
+                            <!-- margin right -->
+                            <li></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="fb7-menu" id="fb7-right">
+                        <ul>
+                            <!-- icon page manager -->
+                            <li class="fb7-goto">
+                                <label for="fb7-page-number" id="fb7-label-page-number"></label>
+                                <input type="text" id="fb7-page-number">
+                                <button type="button">Go</button>
+                            </li>
+
+                        </ul>
+                    </div>
+
                 </div>
 
-                <div class="fb7-menu" id="fb7-right">
-                    <ul>
-                        <!-- icon page manager -->
-                        <li class="fb7-goto">
-                            <label for="fb7-page-number" id="fb7-label-page-number"></label>
-                            <input type="text" id="fb7-page-number">
-                            <button type="button">Go</button>
-                        </li>
-
-                    </ul>
-                </div>
-
-            </div>
+            </nav>
             <!-- END FOOTER -->
 
             <!-- BEGIN THUMBS -->
