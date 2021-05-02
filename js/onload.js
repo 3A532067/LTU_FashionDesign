@@ -272,9 +272,7 @@
             this.key_down();
 
             //show and hide full screen icon
-            if (!$.support.fullscreen) {
-                $('li a.fb7-fullscreen').parent(this).remove();
-            }
+
 
         },
 
