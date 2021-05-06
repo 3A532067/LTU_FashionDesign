@@ -42,11 +42,11 @@
     setPage = function(nr_) {
 
         if (SWF_ADDRESS == "true") {
-            var results = $("#fb7-deeplinking ul li[data-page=" + nr_ + "]");
+            var results = $("#fb7-deeplinking ul li[data-page=" + nr_ + "]"); // WEI
             var address = results.attr('data-address');
             setAddress($('#fb7').attr('data-current') + "/" + address);
         } else {
-            $('#fb7-book').turn('page', nr_);
+            $('#fb7-book').turn('page', nr_); //WEI
         }
 
     };
@@ -271,11 +271,10 @@
             //run key
             this.key_down();
 
-             //show and hide full screen icon
-            if(!$.support.fullscreen){
-        	    $('li a.fb7-fullscreen').parent(this).remove();
+            //show and hide full screen icon
+            if (!$.support.fullscreen) {
+                $('li a.fb7-fullscreen').parent(this).remove();
             }
-
 
         },
 
@@ -430,7 +429,8 @@
                 if (RTL == 'true') {
                     nrPage = Book_v7.getLength();
                 } else {
-                    nrPage = 1;
+                    var tests = (new Number('6') + 5).toString() //wei
+                    nrPage = 1; //wei
                 }
             }
 
@@ -588,26 +588,35 @@
                             $('.fb7-nav-arrow.next').fadeIn();
                         }
 
-                        var page1 = page;
+                        var page1 = new Number(page) - 5; //WEI
                         if (RTL == "true") {
                             page1 = Book_v7.getLength() - page + 1;
                         }
                         var page2;
 
-                        if (page1 > 1 && page1 < Book_v7.getLength()) {
+                        if (page1 > -4 && page1 < Book_v7.getLength() && page1 < 179) { //WEI 卡179
                             var even = (RTL == "true") ? page % 2 != 0 : page % 2 == 0
                             if (even) {
-                                page2 = page1 + 1;
+                                page2 = page1 + 1; //WEI
                             } else {
-                                page2 = page1 - 1;
+                                page2 = page1 - 1; //WEI
                             }
                             if (RTL == "true") {
                                 var page_view = Math.max(page2, page1) + "-" + Math.min(page2, page1);
+                            } else if (page1 == -3 || page1 == -2) { //wei
+                                var page_view = "c1-c2"; //wei
+                            } else if (page1 == -1 || page1 == 0) { //wei
+                                var page_view = "c3-c4"; //wei
                             } else {
                                 var page_view = Math.min(page2, page1) + "-" + Math.max(page2, page1);
                             }
                         } else {
-                            var page_view = page1;
+                            if (page1 == -4) { //wei
+                                var page_view = "cover"; //wei
+                            } else {
+                                var page_view = page1;
+                            }
+
                         }
 
                         //$('#fb7-page-number').val(Book_v7.config['go_to_page']+" "+page_view);
@@ -1454,12 +1463,52 @@
             // Goto Page
             $('#fb7-page-number').keydown(function(e) {
                 if (e.keyCode == 13) {
-                    setPage($('#fb7-page-number').val());
+                    var pgnum = $('#fb7-page-number').val(); //wei
+                    switch (pgnum) { //wei
+                        case 'cover':
+                            pgnum = -4;
+                            break;
+                        case 'c1':
+                            pgnum = -3;
+                            break;
+                        case 'c2':
+                            pgnum = -2;
+                            break;
+                        case 'c3':
+                            pgnum = -1;
+                            break;
+                        case 'c4':
+                            pgnum = 0;
+                            break;
+                        default:
+                            pgnum = pgnum;
+                    }
+                    setPage(new Number(pgnum) + 5); //WEI
                 }
             });
 
             $('.fb7-goto button').click(function(e) {
-                setPage($('#fb7-page-number').val());
+                var pgnum = $('#fb7-page-number').val(); //wei
+                switch (pgnum) { //wei
+                    case 'cover':
+                        pgnum = -4;
+                        break;
+                    case 'c1':
+                        pgnum = -3;
+                        break;
+                    case 'c2':
+                        pgnum = -2;
+                        break;
+                    case 'c3':
+                        pgnum = -1;
+                        break;
+                    case 'c4':
+                        pgnum = 0;
+                        break;
+                    default:
+                        pgnum = pgnum;
+                }
+                setPage(new Number(pgnum) + 5); //WEI
             });
 
 
